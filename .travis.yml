@@ -14,7 +14,7 @@ before_install:
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file multi-k8s-service-account.json
   - gcloud config set project multi-k8s-240007
-  - gcloud config set compute/zone us-central1a
+  - gcloud config set compute/zone us-central1-a
   - gcloud container clusters get-credentials multi-k8s-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t palankarravi/react-test -f ./client/Dockerfile.dev ./client
